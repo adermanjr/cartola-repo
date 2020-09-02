@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Time:</strong>
+  <%= @cartoleiro.time %>
+</p>
+
+<p>
+  <strong>Nome:</strong>
+  <%= @cartoleiro.nome %>
+</p>
+
+<p>
+  <strong>Camisa:</strong>
+  <%= @cartoleiro.camisa %>
+</p>
+
+<%= link_to 'Edit', edit_cartoleiro_path(@cartoleiro) %> |
+<%= link_to 'Back', cartoleiros_path %>

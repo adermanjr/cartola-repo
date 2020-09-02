@@ -1,0 +1,37 @@
+<%= form_for(pontuacao) do |f| %>
+  <% if pontuacao.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(pontuacao.errors.count, "error") %> prohibited this pontuacao from being saved:</h2>
+
+      <ul>
+      <% pontuacao.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :cartoleiro_id %>
+    <%= f.number_field :cartoleiro_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :rodada_id %>
+    <%= f.number_field :rodada_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :pontos %>
+    <%= f.text_field :pontos %>
+  </div>
+
+  <div class="field">
+    <%= f.label :posicao %>
+    <%= f.number_field :posicao %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

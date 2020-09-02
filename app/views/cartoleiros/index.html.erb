@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Cartoleiros</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Time</th>
+      <th>Nome</th>
+      <th>Camisa</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cartoleiros.each do |cartoleiro| %>
+      <tr>
+        <td><%= cartoleiro.time %></td>
+        <td><%= cartoleiro.nome %></td>
+        <td><%= cartoleiro.camisa %></td>
+        <td><%= link_to 'Show', cartoleiro %></td>
+        <td><%= link_to 'Edit', edit_cartoleiro_path(cartoleiro) %></td>
+        <td><%= link_to 'Destroy', cartoleiro, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Cartoleiro', new_cartoleiro_path %>

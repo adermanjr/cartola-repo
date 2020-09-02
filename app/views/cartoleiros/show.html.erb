@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<div class="container-fluid">
+  <h1><%= "#{@cartoleiro.time} - #{@cartoleiro.nome}" %></h1>
+  
+  <div class="table-responsive">
+  <table class="table">
+    <thead>
+      <tr class="bg-primary h3">
+        <th>Rodada</th>
+        <th>Classificação</th>
+        <th>Pontuação</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @cartoleiro.pontuacaos.sort_by {|obj| obj.rodada_id}.each do |pontuacao| %>
+        <tr class="h3">
+          <td><%= link_to "#{pontuacao.rodada_id} ª Rodada", rodada_path(pontuacao.rodada_id) %></td>
+          <td><%= pontuacao.posicao %>º</td>
+          <td><%= number_with_precision pontuacao.pontos, :precision => 2 %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  </div>
+
+  <%= line_chart @cartoleiro.pontuacaos.select(:rodada_id, :pontos).sort_by{|obj| obj.rodada_id}.map{|p| ["#{p.rodada_id}ª Rodada", p.pontos]}, height: "600px" %>
+  
+  <footer class="footer">
+    <nav>
+      <h4><%= link_to "Voltar",   root_path %></h4>
+    </nav>
+  </footer>
+</div>

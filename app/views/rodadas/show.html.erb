@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<div class="container-fluid">
+  <h1><%= @rodada.nome %></h1>
+  
+  <div class="table-responsive">
+  <table class="table">
+    <thead>
+      <tr class="bg-primary h3">
+        <th>Classificação</th>
+        <th>Time</th>
+        <th>Disputa a camisa?</th>
+        <th>Pontos</th>
+      </tr>
+    </thead>
+  
+    <tbody>
+      
+      <% @rodada.pontuacaos.sort_by {|obj| obj.posicao}.each do |pontuacao| %>
+        <tr class="h3">
+          <td><%= pontuacao.posicao %>º</td>
+          <td><%= link_to pontuacao.cartoleiro.time, cartoleiro_path(pontuacao.cartoleiro.id) %></td>
+          <td><%= pontuacao.cartoleiro.camisa ? "Sim": "Não"  %></td>
+          <td><%= number_with_precision pontuacao.pontos, :precision => 2 %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  </div>
+  
+  <%= column_chart @rodada.pontuacaos.sort_by{|obj| obj.rodada_id}.map{|p| [p.cartoleiro.time, p.pontos]}, height: "600px" %>
+  
+</div>

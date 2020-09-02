@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<div class="container-fluid">
+  <h1>Classificação Final 2º Turno</h1>
+  <h2 class="text-danger">Parabéns, <strong>Raposão 3000</strong>! Campeão da disputa da camisa da Liga Igreja de Cristo - RMBH!</h2>
+  <h2 class="text-danger">Obrigado a todos pela participação! Foi bom demais, e ano que vem tem mais!</h2>
+  <h2 class="text-primary">Que o Senhor abençoe a todos!</h2>
+  
+  <div class="table-responsive">
+  <table class="table">
+    <thead>
+      <tr class="bg-primary h3">
+        <th>Classificação</th>
+        <th>Time</th>
+        <th>Disputa a camisa?</th>
+        <th>Pontos</th>
+      </tr>
+    </thead>
+  
+    <tbody>
+      <% @cartoleiros.sort_by{|obj| obj.pontuacaos.to_a.sum(&:pontos)}.reverse.each_with_index do |cartoleiro, index| %>
+        <tr class="h3">
+          <td><%= index +1 %>º</td>
+          <td><%= link_to cartoleiro.time, cartoleiro_path(cartoleiro.id) %></td>
+          <td><%= cartoleiro.camisa ? "Sim": "Não"  %></td>
+          <td><%= number_with_precision(cartoleiro.pontuacaos.to_a.sum(&:pontos), :precision => 2) %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  </div>
+  
+  <%= line_chart @cartoleiros.map{|ct|{name: ct.time, data: ct.pontuacaos.sort_by{|r| r[:rodada_id] }.map{|p| ["#{p.rodada_id}ª Rodada", p.pontos]}}}, height: "800px" %>
+  
+</div>

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  cartoleiro_id: 1
+  rodada_id: 1
+  pontos: 1.5
+  posicao: 1
+
+two:
+  cartoleiro_id: 1
+  rodada_id: 1
+  pontos: 1.5
+  posicao: 1

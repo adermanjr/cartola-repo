@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Cartoleiro:</strong>
+  <%= @pontuacao.cartoleiro_id %>
+</p>
+
+<p>
+  <strong>Rodada:</strong>
+  <%= @pontuacao.rodada_id %>
+</p>
+
+<p>
+  <strong>Pontos:</strong>
+  <%= @pontuacao.pontos %>
+</p>
+
+<p>
+  <strong>Posicao:</strong>
+  <%= @pontuacao.posicao %>
+</p>
+
+<%= link_to 'Edit', edit_pontuacao_path(@pontuacao) %> |
+<%= link_to 'Back', pontuacaos_path %>

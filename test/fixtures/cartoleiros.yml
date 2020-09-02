@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  time: MyString
+  nome: MyString
+  camisa: false
+
+two:
+  time: MyString
+  nome: MyString
+  camisa: false
