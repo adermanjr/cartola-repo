@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+<p style="color: green"><%= notice %></p>
 
 <div class="container-fluid">
   <h1><%= "#{@cartoleiro.time} - #{@cartoleiro.nome}" %></h1>
@@ -6,7 +6,7 @@
   <div class="table-responsive">
   <table class="table">
     <thead>
-      <tr class="bg-primary h3">
+      <tr class="bg-light h3">
         <th>Rodada</th>
         <th>Classificação</th>
         <th>Pontuação</th>
@@ -29,7 +29,18 @@
   
   <footer class="footer">
     <nav>
-      <h4><%= link_to "Voltar",   root_path %></h4>
+      <h4><%= link_to "Back",   root_path %></h4>
     </nav>
   </footer>
 </div>
+
+<!--
+< render @cartoleiro %>
+
+<div>
+  < link_to "Edit this cartoleiro", edit_cartoleiro_path(@cartoleiro) %> |
+  < link_to "Back to cartoleiros", cartoleiros_path %>
+
+  < button_to "Destroy this cartoleiro", @cartoleiro, method: :delete %>
+</div>
+-->

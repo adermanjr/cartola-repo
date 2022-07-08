@@ -1,22 +1,22 @@
-<%= form_for(rodada) do |f| %>
+<%= form_with(model: rodada) do |form| %>
   <% if rodada.errors.any? %>
-    <div id="error_explanation">
+    <div style="color: red">
       <h2><%= pluralize(rodada.errors.count, "error") %> prohibited this rodada from being saved:</h2>
 
       <ul>
-      <% rodada.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+        <% rodada.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
 
   <div class="field">
-    <%= f.label :nome %>
-    <%= f.text_field :nome %>
+    <%= form.label :nome, style: "display: block" %>
+    <%= form.text_field :nome %>
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= form.submit %>
   </div>
 <% end %>

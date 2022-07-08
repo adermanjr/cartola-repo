@@ -1,1 +1,1 @@
-json.array! @pontuacaos, partial: 'pontuacaos/pontuacao', as: :pontuacao
+json.array! @pontuacaos, partial: "pontuacaos/pontuacao", as: :pontuacao

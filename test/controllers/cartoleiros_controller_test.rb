@@ -1,4 +1,4 @@
-require 'test_helper'
+require "test_helper"
 
 class CartoleirosControllerTest < ActionDispatch::IntegrationTest
   setup do
@@ -16,7 +16,7 @@ class CartoleirosControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should create cartoleiro" do
-    assert_difference('Cartoleiro.count') do
+    assert_difference("Cartoleiro.count") do
       post cartoleiros_url, params: { cartoleiro: { camisa: @cartoleiro.camisa, nome: @cartoleiro.nome, time: @cartoleiro.time } }
     end
 
@@ -39,7 +39,7 @@ class CartoleirosControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should destroy cartoleiro" do
-    assert_difference('Cartoleiro.count', -1) do
+    assert_difference("Cartoleiro.count", -1) do
       delete cartoleiro_url(@cartoleiro)
     end
 

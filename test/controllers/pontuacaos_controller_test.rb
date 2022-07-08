@@ -1,4 +1,4 @@
-require 'test_helper'
+require "test_helper"
 
 class PontuacaosControllerTest < ActionDispatch::IntegrationTest
   setup do
@@ -16,7 +16,7 @@ class PontuacaosControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should create pontuacao" do
-    assert_difference('Pontuacao.count') do
+    assert_difference("Pontuacao.count") do
       post pontuacaos_url, params: { pontuacao: { cartoleiro_id: @pontuacao.cartoleiro_id, pontos: @pontuacao.pontos, posicao: @pontuacao.posicao, rodada_id: @pontuacao.rodada_id } }
     end
 
@@ -39,7 +39,7 @@ class PontuacaosControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should destroy pontuacao" do
-    assert_difference('Pontuacao.count', -1) do
+    assert_difference("Pontuacao.count", -1) do
       delete pontuacao_url(@pontuacao)
     end
 

@@ -1,15 +1,16 @@
-<p id="notice"><%= notice %></p>
+<p style="color: green"><%= notice %></p>
 
 <div class="container-fluid">
   <h1>Classificação Final 2º Turno</h1>
-  <h2 class="text-danger">Parabéns, <strong>Raposão 3000</strong>! Campeão da disputa da camisa da Liga Igreja de Cristo - RMBH!</h2>
+  <h2 class="text-danger">Parabéns, <strong>Raposão 3000</strong>!</h2>
+  <h2>Campeão da disputa da camisa da Liga Igreja de Cristo - RMBH!</h2>
   <h2 class="text-danger">Obrigado a todos pela participação! Foi bom demais, e ano que vem tem mais!</h2>
   <h2 class="text-primary">Que o Senhor abençoe a todos!</h2>
   
   <div class="table-responsive">
   <table class="table">
     <thead>
-      <tr class="bg-primary h3">
+      <tr class="bg-light h3">
         <th>Classificação</th>
         <th>Time</th>
         <th>Disputa a camisa?</th>
@@ -33,3 +34,6 @@
   <%= line_chart @cartoleiros.map{|ct|{name: ct.time, data: ct.pontuacaos.sort_by{|r| r[:rodada_id] }.map{|p| ["#{p.rodada_id}ª Rodada", p.pontos]}}}, height: "800px" %>
   
 </div>
+
+
+<br>

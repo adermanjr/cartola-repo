@@ -1,32 +1,32 @@
-<%= form_for(cartoleiro) do |f| %>
+<%= form_with(model: cartoleiro) do |form| %>
   <% if cartoleiro.errors.any? %>
-    <div id="error_explanation">
+    <div style="color: red">
       <h2><%= pluralize(cartoleiro.errors.count, "error") %> prohibited this cartoleiro from being saved:</h2>
 
       <ul>
-      <% cartoleiro.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+        <% cartoleiro.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
 
   <div class="field">
-    <%= f.label :time %>
-    <%= f.text_field :time %>
+    <%= form.label :time, style: "display: block" %>
+    <%= form.text_field :time %>
   </div>
 
   <div class="field">
-    <%= f.label :nome %>
-    <%= f.text_field :nome %>
+    <%= form.label :nome, style: "display: block" %>
+    <%= form.text_field :nome %>
   </div>
 
   <div class="field">
-    <%= f.label :camisa %>
-    <%= f.check_box :camisa %>
+    <%= form.label :camisa, style: "display: block" %>
+    <%= form.check_box :camisa %>
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= form.submit %>
   </div>
 <% end %>

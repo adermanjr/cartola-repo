@@ -1,1 +1,1 @@
-json.array! @rodadas, partial: 'rodadas/rodada', as: :rodada
+json.array! @rodadas, partial: "rodadas/rodada", as: :rodada

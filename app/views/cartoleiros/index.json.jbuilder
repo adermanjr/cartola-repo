@@ -1,1 +1,1 @@
-json.array! @cartoleiros, partial: 'cartoleiros/cartoleiro', as: :cartoleiro
+json.array! @cartoleiros, partial: "cartoleiros/cartoleiro", as: :cartoleiro

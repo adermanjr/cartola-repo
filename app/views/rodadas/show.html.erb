@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+<p style="color: green"><%= notice %></p>
 
 <div class="container-fluid">
   <h1><%= @rodada.nome %></h1>
@@ -6,7 +6,7 @@
   <div class="table-responsive">
   <table class="table">
     <thead>
-      <tr class="bg-primary h3">
+      <tr class="bg-light h3">
         <th>Classificação</th>
         <th>Time</th>
         <th>Disputa a camisa?</th>
@@ -31,3 +31,13 @@
   <%= column_chart @rodada.pontuacaos.sort_by{|obj| obj.rodada_id}.map{|p| [p.cartoleiro.time, p.pontos]}, height: "600px" %>
   
 </div>
+
+
+<!--
+<div>
+  < link_to "Edit this rodada", edit_rodada_path(@rodada) %> |
+  < link_to "Back to rodadas", rodadas_path %>
+
+  < button_to "Destroy this rodada", @rodada, method: :delete %>
+</div>
+-->

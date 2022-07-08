@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+<p style="color: green"><%= notice %></p>
 
 <p>
   <strong>Cartoleiro:</strong>
@@ -20,5 +20,9 @@
   <%= @pontuacao.posicao %>
 </p>
 
-<%= link_to 'Edit', edit_pontuacao_path(@pontuacao) %> |
-<%= link_to 'Back', pontuacaos_path %>
+<div>
+  <%= link_to "Edit", edit_pontuacao_path(@pontuacao) %> |
+  <%= link_to "Back", pontuacaos_path %>
+
+  <%= button_to "Destroy", @pontuacao, method: :delete %>
+</div>

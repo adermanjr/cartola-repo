@@ -1,4 +1,4 @@
-require 'test_helper'
+require "test_helper"
 
 class RodadasControllerTest < ActionDispatch::IntegrationTest
   setup do
@@ -16,7 +16,7 @@ class RodadasControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should create rodada" do
-    assert_difference('Rodada.count') do
+    assert_difference("Rodada.count") do
       post rodadas_url, params: { rodada: { nome: @rodada.nome } }
     end
 
@@ -39,7 +39,7 @@ class RodadasControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should destroy rodada" do
-    assert_difference('Rodada.count', -1) do
+    assert_difference("Rodada.count", -1) do
       delete rodada_url(@rodada)
     end
 
