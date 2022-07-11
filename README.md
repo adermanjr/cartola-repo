@@ -3,3 +3,4 @@
 Created in RoR 7 using Bootstrap 5.2, FontAwesome 5.7, chartkick and postgree
     
 Published on heroku
+https://cartola-rmbh.herokuapp.com/
